@@ -1,0 +1,132 @@
+
+
+@media only screen and (min-width: 1920px) and (max-width: 3072px) {
+ 
+  .topnav{
+   width: 100%;
+  }
+  .submission-card{
+     width: 60%;
+  }
+  .incoming-sub-page-divider{
+    width: 53%;
+  }
+ }
+ @media only screen and (min-width: 768px) and (max-width: 1366px) {
+  .submission-form-container{
+    width: 90%;
+ }
+ .incoming-sub-page-divider{
+  width: 94%;
+}
+}
+ @media only screen and (min-width: 900px) and (max-width: 1440px) {
+  .submission-form-container{
+    width: 85%;
+ }
+ }
+ @media only screen and (min-width: 1600px) and (max-width: 2560px) {
+  .submission-form-container{
+    width: 72%;
+ }
+ /* .dashboard-container {
+  
+  margin-left: 5%;
+} */
+
+ }
+ @media only screen and (min-width: 1080px) and (max-width: 1920px) {
+ 
+  .incoming-sub-page-divider{
+    width: 112%;
+    /* width: 97%; */
+  }
+ }
+ @media only screen and (min-width: 2160px) and (max-width: 3840px) {
+ 
+  .topnav{
+   width: 100%;
+  }
+  .submission-form-container{
+    width: 38%;
+  }
+  /* .incoming-sub-page-divider{
+    width: 29%;
+  } */
+ }
+
+
+.profile-picture {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  /* border-bottom: 1px dotted #83744e */
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity .3s
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #000 transparent transparent transparent
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1
+}
+::-webkit-scrollbar {
+
+  display: none;
+  /* width: 7px; */
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, .5);
+  -webkit-box-shadow: 0 0 1px rgb(255 255 255 / 50%);
+}
+
+@-moz-document url-prefix() {
+  html,body{overflow: hidden !important;}
+}
+body {
+  margin: 0; /* remove default margin */
+  scrollbar-width: none; /* Also needed to disable scrollbar Firefox */
+  -ms-overflow-style: none;  /* Disable scrollbar IE 10+ */
+  overflow-y: -moz-hidden-unscrollable;
+}
+body::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* Disable scrollbar Chrome/Safari/Webkit */
+}
+

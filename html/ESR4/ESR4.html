@@ -1,0 +1,1891 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="../../css/main.css" />
+
+  <!-- Uses some of the css classes from dashboard  -->
+  <!-- <link rel="stylesheet" href="../../css/ESR-bar/" /> -->
+  <link rel="stylesheet" href="../../css/ESR3/new-esr.css" />
+
+  <link rel="stylesheet" href="../../css/ESR-page/esrReport.css" />
+  <link rel="stylesheet" href="../../css/ESR-page/esrpage.css" />
+  <link rel="stylesheet" href="../../css//ESR-page/esr3.css" />
+
+  <link rel="stylesheet" href="../../css/ESR-mgm/esr-mgmt.css" />
+
+  <link rel="stylesheet" href="../../css/ESR-bar/dashboard.css" />
+  <title>ESR4-with ESR</title>
+</head>
+
+<body class=".hide-scrollbar">
+  <div class="topnav">
+    <div class="menu-hamburger">
+      <div class="pr-10" onclick="openSideNav()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
+          <defs>
+            <style>
+              .a {
+                fill: #fff;
+              }
+            </style>
+          </defs>
+          <path class="a" d="M4.5,25h24V22.333H4.5Zm0-6.667h24V15.667H4.5ZM4.5,9v2.667h24V9Z"
+            transform="translate(-4.5 -9)" />
+        </svg>
+      </div>
+      <div>
+        MGM Deal Memo
+      </div>
+    </div>
+    <div class="nav-actions-container">
+      <div class="notifications-action pr-10">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" viewBox="0 0 16 20">
+          <defs>
+            <style>
+              .a {
+                fill: #fff;
+              }
+            </style>
+          </defs>
+          <path class="a"
+            d="M18.875,28.336a.671.671,0,0,0-.658.528,1.3,1.3,0,0,1-.259.564.979.979,0,0,1-.834.305,1,1,0,0,1-.834-.305,1.3,1.3,0,0,1-.259-.564.671.671,0,0,0-.658-.528h0a.675.675,0,0,0-.658.823,2.313,2.313,0,0,0,2.408,1.921,2.309,2.309,0,0,0,2.408-1.921.678.678,0,0,0-.658-.823Z"
+            transform="translate(-9.139 -11.08)" />
+          <path class="a"
+            d="M22.574,18.625c-.771-1.007-2.287-1.6-2.287-6.105,0-4.627-2.062-6.487-3.984-6.933-.18-.045-.31-.1-.31-.293V5.151a1.222,1.222,0,0,0-1.2-1.22h-.03a1.222,1.222,0,0,0-1.2,1.22v.144c0,.184-.13.248-.31.293-1.927.451-3.984,2.306-3.984,6.933,0,4.508-1.517,5.093-2.287,6.105a.984.984,0,0,0,.8,1.577h14.02A.984.984,0,0,0,22.574,18.625Zm-1.952.288H8.95a.217.217,0,0,1-.165-.362,6,6,0,0,0,1.051-1.656,11.147,11.147,0,0,0,.716-4.374,7.551,7.551,0,0,1,1.046-4.3,3.212,3.212,0,0,1,1.937-1.369,1.758,1.758,0,0,0,.931-.521.4.4,0,0,1,.6-.01A1.818,1.818,0,0,0,16,6.847a3.212,3.212,0,0,1,1.937,1.369,7.551,7.551,0,0,1,1.046,4.3,11.147,11.147,0,0,0,.716,4.374,6.071,6.071,0,0,0,1.076,1.681A.2.2,0,0,1,20.622,18.913Z"
+            transform="translate(-6.775 -3.93)" />
+        </svg>
+      </div>
+      <div class="avatar-action pl-10">
+        <div class="profile-picture">
+          <img src="../../assets/media/profile1.svg" />
+        </div>
+        <div class="pl-10">
+          <span>Lesley Drukker</span>
+          <span>
+            <img src="../../assets/media/down-arrow.svg" />
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="dashboard-container incoming-submission-page">
+    <div class="dashboard-welcome-title" style="font-size: 36px;">New Deal</div>
+
+    <!-- <section>
+      <div class="submission-card">
+        <div class="submission-form-container">
+          <div style="height: 0px;">Select Submission Type</div>
+          <form class="submission-type-form">
+            <div class="form-control">
+              <label for="submission-type" style="display: none">Submission Type</label>
+              <br />
+              <div class="incoming-sub-page-divider">
+                <div class="custom-select submission-type">
+                  <label for="submission-type" style="visibility: hidden">Submission Type</label>
+                  <select name="submission-type" id="submission-type" placeholder="Submission Type"
+                    onclick="displayTitle(this)">
+                    <option selected value="">Submission Type</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                  </select>
+                </div>
+                <div class="custom-select submission-detail">
+                  <label for="submission-detail" style="visibility: hidden">Submission Detail</label>
+                  <select name="submission-detail" id="submission-detail" placeholder="Submission Detail">
+                    <option selected value="">Submission Details</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-control">
+              <label for="submission-type" style="display: none">Submission Type</label>
+              <br />
+              <div class="custom-select evaluation-status">
+                <label for="evaluation-status" style="visibility: hidden">Evaluation Status</label>
+                <select name="evaluation-status" id="evaluation-status" placeholder="Evaluation Status"
+                  onclick="displayTitle(this)">
+                  <option selected value="">Evaluation Status</option>
+                  <option value="A">A</option>
+                  <option value="B">B</option>
+                  <option value="C">C</option>
+                </select>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section> -->
+    <section>
+      <div class="submission-card" style="margin-bottom: -25px; width: 81%;">
+        <div class="check-row submission-form-container" style="background-color: #EAEAEA;
+        box-shadow: none;">
+          <div  style="display: flex;">
+          <div class="submission-status" style="margin-left: 57px;" >
+            <svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 0 24 24" width="40" style="margin-left: 39px;">
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                class="svg-color" fill="#247C4A" />
+            </svg>
+            <div  >
+              <b style="color:#AFAFAF;font-weight: normal;" class="txt-black">Deal Type and <br>
+              ESR Requirments</b>
+            </div>
+          </div>
+        </div>
+        <div  style="display: flex;">
+          <div class="submission-status" style=" margin-left: 174px;" >
+            <svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 0 24 24" width="40" style="margin-left: 35px;">
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                class="svg-color" fill="#247C4A" />
+            </svg>
+            <div  >
+              <b style="color:#AFAFAF;font-weight: normal;margin-left: 33px;" class="txt-black">Deal Information<br>
+                &nbsp;
+                &nbsp;
+              </b>
+            </div>
+          </div>
+        </div>
+        <!-- <div  style="display: flex;">
+          <div class="submission-status" style="padding-top: 20px; margin-left: 27px;" >
+            <svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 0 24 24" width="40">
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                class="svg-color" fill="#83744e" />
+            </svg>
+            <div  >
+              <b class="txt-black">Opportunity Information <br>
+              </b>
+            </div>
+          </div>
+        </div> -->
+        <div  style="display: flex;">
+          <div class="submission-status" style=" margin-left: 272px;" >
+            <svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 0 24 24" width="40" style="margin-left: 33px;">
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                class="svg-color" fill="#83744e" />
+            </svg>
+            <div  >
+              <b style="color:#AFAFAF; font-weight: normal;" class="txt-black">Title(s), Media, <br>
+                Teritory, Language
+                &nbsp;
+                &nbsp;
+              </b>
+            </div>
+          </div>
+        </div>
+        <div  style="display: flex;">
+          <div class="submission-status" style=" margin-left: 338px; "   class="material">
+            <svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 0 24 24" width="40" style="margin-left: 36px;">
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                class="svg-color" fill="#AFAFAF" />
+            </svg>
+            <div  >
+              <b style="color:#AFAFAF;font-weight: normal;margin-left: 33px;" class="txt-black">Materials <br>
+                &nbsp;
+                &nbsp;
+              </b>
+            </div>
+          </div>
+        </div>
+        <!-- <div  style="display: flex;">
+          <div   style="padding-top: 5px; margin-left: 25px;" >
+            <svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 0 24 24" width="40">
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                class="svg-color" fill="#AFAFAF" />
+            </svg>
+            <div  >
+              <b style="color:#AFAFAF;" class="txt-black">Reviewer
+          </b>
+            </div>
+          </div>
+        </div> -->
+        <div  style="display: flex;">
+          <div class="submission-status" style=" margin-left: 386px;" >
+            <svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 0 24 24" width="40" style="margin-left: 31px;">
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                class="svg-color" fill="#AFAFAF" />
+            </svg>
+            <div  >
+              <b style="color:#AFAFAF;font-weight: normal; margin-left: 33px;" class="txt-black">Approver <br>
+                &nbsp;
+                &nbsp;
+              </b>
+            </div>
+          </div>
+        </div>
+        <div  style="display: flex;">
+          <div  style="padding-bottom: 35px; margin-left: 341px;" >
+            <svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 0 24 24" width="40" class="review" >
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                class="svg-color" fill="#AFAFAF" />
+            </svg>
+            <div  >
+              <b style="color:#AFAFAF;font-weight: normal; margin-left: 10px;" class="rr">Reviewer
+          </b>
+            </div>
+          </div>
+        </div>
+        
+        
+          <!-- <span class="dotted-line"></span>
+          <div class="coverage-received-block" onclick="updateCoverageStatus(this)">
+            <svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 0 24 24" width="40" onclick="fillSvg(this)">
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                class="svg-color fill-grey" fill="#AFAFAF" />
+            </svg>
+            <div>
+              <b class="coverage-received">Opportunity Information</b>
+            </div>
+          </div> -->
+          
+         
+          <!-- <div class="submission-status">
+          <div onclick="updateStatus(this)">
+            <svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 0 24 24" width="40" onclick="fillSvg(this)">
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+              class="svg-color fill-grey" fill="#AFAFAF" />
+            </svg>
+            <div>
+              <b>Opportunity Information</b>
+            </div>
+          </div>
+        </div>
+        <div class="submission-status" >
+          <div onclick="updateStatus(this)" >
+            <svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 0 24 24" width="40" onclick="fillSvg(this)">
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                class="svg-color fill-grey" fill="#AFAFAF" />
+            </svg>
+            <div>
+              <b>Approver</b>
+            </div>
+          </div>
+        </div> -->
+       
+          <!-- <div onclick="updateStatus(this)" style="margin-right: 157px;">
+            <svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 0 24 24" width="40" onclick="fillSvg(this)">
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                class="svg-color fill-grey" fill="#AFAFAF" />
+            </svg>
+            <div>
+              <b>Reviewer</b>
+            </div>
+          </div> -->
+        
+      </div>
+    </section>
+
+    <h4 style="margin-bottom: 20px;">Deal Information</h4>
+    <div class="incoming-sub-page-divider" style="overflow-y: scroll;
+    max-height: 603px;
+    overflow-x: hidden;
+    -ms-overflow-style: none; scrollbar-width: none;">
+      <div class="devide"  style="flex-grow: 1;" >
+        <section>
+          <div class="submission-form-container " style="width: 565px;">
+            <h4 style="margin-bottom: 0px">Deal Details</h4>
+            <div class="submission-form">
+              <form>
+                <!-- <div class="form-control">
+                  <label for="script-title" style="display: none">Deal Owner</label>
+                  <br />
+                  <input style="width: 365px;" type="text" placeholder="Deal Owner" name="script-title" id="script-title"
+                    onclick="displayTitle(this)" />
+                </div> -->
+                <!-- <div class="autocomplete" style="width: 365px;" >
+                  <label for="covered-by" style="display: none">Deal Owner</label>
+                  <br />
+                  <input type="text" placeholder="Deal Owner" name="covered-by" id="searchField" class="ac"
+                    onclick="displayTitle(this, true)" />
+                </div> -->
+                
+                <div class="autocomplete" id="overall-deal"  style="width: 365px;" >
+                  <label for="related-contacts" style="display: none">Deal Owner</label>
+                  
+                  <input  type="text" placeholder="Deal Owner" name="Deal Owner"
+                      id="related-contacts" class="ac" onclick="displayTitle(this, true)" />
+              </div>
+                <div class="form-control">
+                  <label for="script-title" style="display: none">Sales Team Member</label>
+                  <br />
+                  <input style="width: 365px;"  type="text" placeholder="Sales Team Member" name="script-title" id="script-title"
+                    onclick="displayTitle(this)" />
+                </div>
+                <div class="custom-select" style="margin-top: 6px; width: 385px;">
+                  <label for="select-tier" style="visibility: hidden">Sales Region</label>
+                  <select name="select-tier"  placeholder="Sales Region" onclick="displayTitle(this)">
+                    <option selected value="">EMEA</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                  </select>
+                </div>
+                <div class="custom-select" style="margin-top: 6px; width: 385px;">
+                  <label for="select-tier" style="visibility: hidden">Sales Office</label>
+                  <select name="select-tier" id="overall-deal" placeholder="Sales Office" onclick="displayTitle(this)">
+                    <option selected value="">LONDON</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                  </select>
+                </div>
+                <div class="form-control">
+                  <label for="script-title" style="display: none">Deal memo Member</label>
+                  <br />
+                  <input style="width: 365px;"  type="text" placeholder="Deal memo Member" name="script-title" id="script-title"
+                    onclick="displayTitle(this)" />
+                </div>
+
+              <div style="display: flex;">
+                <div class="form-control">
+                  <label for="script-title" style="display: none">Deal Name</label>
+                  <br />
+                  <input style="width: 365px;" type="text" placeholder="Deal Name" name="script-title" id="script-title"
+                    onclick="displayTitle(this)" />
+                </div>
+                <div class="tooltip_wrap" style="padding-top: 10px; ">
+                  <strong class="tooltip">
+                      <a >
+                        <i  class="material-icons">info</i>
+                          
+                      </a>
+                      <span style="position: absolute; width: 220px;"  class="tooltip-content">
+                          <span class="tooltip-text">
+                              <span class="tooltip-inner" style="font-size: 12px;">
+                                <span class='close'></span>
+                              <b>Format</b><br>
+                                 The Format Should be Teritory,<br>
+                                  Media, Client,Product Type<br>
+                                  <br>
+                                 
+                                  Example:Norway Basic & SVOD;<br>
+                                  20 Librery Features<br>
+                              </span>
+                          </span>
+                      </span>
+                  </strong>
+              </div>
+
+              </div>
+                <div class="form-control">
+                  <label for="script-title" style="display: none">License</label>
+                  <br />
+                  <input style="width: 365px;" type="text" placeholder="License" name="script-title" id="script-title"
+                    onclick="displayTitle(this)" />
+                </div>
+                <div class="form-control">
+                  <label for="script-title" style="display: none">License Service/ Channel</label>
+                  <br />
+                  <input style="width: 365px;"  type="text" placeholder="License Service/ Channel" name="script-title" id="script-title"
+                    onclick="displayTitle(this)" />
+                </div>
+                <div class="custom-select" style="margin-top: 6px; width: 385px;"> 
+                  <label for="select-tier"   style="visibility: hidden">Deal Currency</label>
+                  <select name="select-tier"id="link-require-pwd" placeholder="Deal Currency" onclick="displayTitle(this)">
+                    <option selected value="">Deal Currency</option>
+                    <option value="A">British pound</option>
+                    <option value="B">Euro</option>
+                    <option value="C">Japanees Yen</option>
+                    <option value="C">AUS Dollars</option>
+                    <option value="C">US Dollars</option>
+                    <option value="C">CAN Dollars</option>
+                  </select>
+                </div>
+                <div class="form-control">
+                  <label for="script-title" style="display: none">Estimated Deal Value</label>
+                  <br />
+                  <input style="width: 365px;" type="text" placeholder="Estimated Deal Value" name="script-title" id="script-title"
+                    onclick="displayTitle(this)" />
+                </div>
+                <div class="form-control">
+                  <label for="date-submitted" style="display: none">Estimated Start Date</label>
+                  <br />
+                  <input style="width: 365px;"  type="date" placeholder="Estimated StartDate" name="date-submitted" id="date-submitted"
+                    onclick="displayTitle(this)" />
+                </div>
+                <br>
+                <div style="display:inline-flex; width: 200px;">
+                  
+                  <label class="container"  style="font-size: 14px;">High Priority
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <!-- <input type="checkbox"  name="v1" value="v1">&nbsp;&nbsp;
+                     <label  style="width: 180px; font-size: 14px;" for="v1">High Priority</label><br> -->
+                     
+                </div>
+                <br>
+                <div style="display:inline-flex; ">
+                  <label class="container"  style="font-size: 14px;">Danjaq Approval
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <!-- <input type="checkbox" name="v2" value="vv" ><br>&nbsp;&nbsp;
+                     <label style="width: 180px; font-size: 14px; " for="vv">Danjaq Approval</label><br> -->
+                </div>
+                <div class="form-control">
+                  <label for="material-type" style="display: none">PROBABILITY</label>
+                  <br />
+                  <input  style="width: 365px;" type="text" placeholder="15%" name="material-type" id="material-type"
+                    onclick="displayTitle(this)" />
+                </div>
+                
+               
+                <div class="custom-select" style="margin-top: 6px; width: 385px;" id="req-due-date">
+                  <label for="select-tier" style="visibility: hidden">On Hold/Lost Reason</label>
+                  <select name="select-tier"id="link-require-pwd" placeholder="On Hold/Last Reason" onclick="displayTitle(this)">
+                    <option selected value="">On Hold/Lost Reason</option>
+                    <option value="A">Triming/Avails</option>
+                    <option value="B">Price</option>
+                    <option value="C">PoorQualification</option>
+                  </select>
+                </div>
+                <div class="form-control" style="width: 385px;">
+                  <label for="submission-summary" style="display: none">On Hold/Lost Details</label>
+                  <br />
+                  <textarea name="submission-summary" id="submission-summary" onclick="displayTitle(this)"
+                    placeholder="On Hold/Lost Details" rows="5"></textarea>
+                </div>
+              </form>
+            </div>
+          </div>
+          <br>
+         
+          <!-- <div class="tooltip">Hover over me
+            <span class="tooltiptext">Tooltip text</span>
+          </div> -->
+         
+            <div>
+              <div class="form-control" style="margin: 10px;">
+                <button class="form-submit-btn" type="submit">
+                  NEXT
+                </button>
+                <button class="form-cancel-btn">BACK</button>
+              </div>
+            </div>
+          
+        </section>
+      </div>
+   
+    <style>
+      .tooltip_wrap {
+    text-align: center;
+}
+.tooltip {
+    display: inline-block; 
+    position: relative; 
+    z-index: 99; 
+    font-size: 40px; 
+    cursor: pointer; 
+    /* color: #4cbea1;  */
+    min-height: 60px;
+}
+.tooltip .icon {
+    font-style: normal; 
+    font-weight: 400;
+}
+.tooltip a {
+  color: #83744e;
+}
+.tooltip .icon:before {
+    font-family: "FontAwesome"; 
+    font-weight: 400;
+}
+.tooltip .icon_clock:before {
+    content: "\f017";
+}
+.tooltip::after { 
+    content: ''; 
+    position: absolute; 
+    width: 100%; 
+    height: 20px; 
+    bottom: 100%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    -webkit-transform: translateX(-50%); 
+    
+}
+.tooltip-content {
+    position: absolute; 
+    z-index: 99; 
+    width: 220px; 
+    left: 580%; 
+    transform: translateX(-50%); 
+    -webkit-transform: translateX(-50%);
+    top: 25%; 
+    font-size: 12px; 
+    font-weight: 400; 
+    color:grey; 
+    background: transparent; 
+    opacity: 0;
+    pointer-events: none; 
+    cursor: default; 
+    -webkit-transition: opacity 0.3s 0.3s; 
+    transition: opacity 0.3s 0.3s; 
+    background-color: #fff;
+    box-shadow: 2px 2px 2px rgb(0 0 0 / 30%);
+}
+.tooltip:hover .tooltip-content {
+    pointer-events: auto; 
+    opacity: 1; 
+    -webkit-transition-delay: 0s; 
+    transition-delay: 0s;
+}
+.tooltip-content span { 
+    display: block;
+}
+.tooltip-text { 
+    /* border-top: 10px solid #4cbea1;  */
+    overflow: hidden; 
+    -webkit-transform: scale3d(0,1,1); 
+    transform: scale3d(0,1,1); 
+    -webkit-transition: -webkit-transform 0.3s 0.3s; 
+    transition: transform 0.3s 0.3s;
+}
+.tooltip:hover .tooltip-text { 
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s; 
+    -webkit-transform: scale3d(1,1,1); 
+    transform: scale3d(1,1,1);
+}
+.tooltip-inner {
+     background-color: #fff; 
+    padding: 10px 15px; 
+    -webkit-transform: translate3d(0,-100%,0);
+    transform: translate3d(0,-100%,0); 
+    -webkit-transition: -webkit-transform 0.3s; 
+    transition: transform 0.3s;
+    /* box-shadow: grey; */
+    border-radius: 2px;
+}
+.tooltip:hover .tooltip-inner { 
+    -webkit-transition-delay: 0.3s;
+    transition-delay: 0.3s; 
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0); 
+    /* box-shadow: grey; */
+}  
+.tooltip-content::after {
+    content: ''; 
+    top: -20px; 
+    left: 50%; 
+    border: solid transparent; 
+    height: 0;    
+    width: 0; 
+    position: absolute; 
+    pointer-events: none; 
+    border-color: transparent; 
+    /* border-bottom-color:grey;  */
+    border-width: 10px; 
+    transform: translateX(-50%); 
+    -webkit-transform: translateX(-50%);
+}
+@media screen and (max-width: 767px) {
+    .tooltip-content {
+        display: none;
+    }
+}
+    </style>
+    <script>
+      $('.tooltip').tooltipster({
+    interactive: true,
+    contentAsHTML: true,
+    interactiveTolerance: 500000
+});
+			
+$(document).on('click', '.close', function() {
+    $('.tooltip').tooltipster('hide');
+});
+    </script>
+    <!-- <style>
+      input[type="checkbox"]:checked + label:before {
+    background: #d4ae36;
+    color: #fafafa;
+    content: "\2713";
+    text-align: center;
+}
+input[type="checkbox"] + label:before {
+    border: 1px solid #939191;
+    content: "\00a0";
+    display: inline-block;
+    font: 12px/1em Poppins Regular;
+    height: 13px;
+    vertical-align: top;
+    width: 13px;
+}
+    </style> -->
+      <div style="flex-grow: 1;">
+        <section>
+          <div class="submission-form-container submission-card" style="width: 420px;">
+            <h4>Additional Details</h4>
+            <div class="submission-form">
+              <form>
+                <div style="display:inline-flex; width: 200px;">
+                  
+                  <!-- <input  type="checkbox"  >&nbsp;&nbsp;
+                  <label class="container"  style="width: 180px; font-size: 14px; " for="v1">Day-and Date Client</label>   -->
+               
+                 
+                 <label class="container" style="width: 180px; font-size: 14px; ">Day-and Date Client
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+                 <!-- <div style="display: flex;margin-top: 28px;">
+                  <label style="font-size: 14px; color: #3D3A3A;">With BA</label>
+                  <input type="checkbox" style="width:62px" id="c1" name="cb">
+                  <label for="c1"></label>
+                </div> -->
+                <br>
+                <div style="display:inline-flex;margin-top: 21px;">
+                  <label class="container" style="width: 180px; font-size: 14px; ">Current Series
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <!-- <input type="checkbox" >&nbsp;&nbsp;
+                  <label  class="container" style="width: 180px; font-size: 14px;" for="vv">Current Series</label><br> -->
+                 </div>
+
+
+                <div style="display: flex; padding-top: 20px;">
+                  <div style="display:inline-flex; ">
+                    <label class="container" style="width: 180px; font-size: 14px; ">Tech Specs
+                      <input type="checkbox" name="v2" value="vv" id="checkBox" onclick="browseFileClick()">
+                      <span class="checkmark"></span>
+                    <!-- <input type="checkbox" name="v2" value="vv" id="checkBox" onclick="browseFileClick()">&nbsp;&nbsp;
+                    <label style="width: 180px; font-size: 14px;" for="vv">Tech Specs</label><br> -->
+                  </div>
+                  <div style="display:inline-flex; ">
+                    <label class="container" style="width: 180px; font-size: 14px; ">Marketing Specs
+                      <input type="checkbox" name="v2" value="vv" id="checkBoxSecond" onclick="browseFileClickSecond()">
+                      <span class="checkmark"></span>
+                    </label>
+                    <!-- <input type="checkbox" name="v2" value="vv" id="checkBoxSecond" onclick="browseFileClickSecond()">&nbsp;&nbsp;
+                    <label style="width: 180px; font-size: 14px;" for="vv">Marketing Specs</label><br> -->
+                  </div>
+                </div>
+               
+
+                <div class="form-control file-upload" style="font-size: small;">
+                  <div style="width: 100%;">
+                    <div id="upload" onclick="browseClick()" >
+                      <input type="file" id="file-upload" multiple required  />
+                      <label style="font-size: 13px;
+                      margin-left: 30px;
+                      color: #746745;
+                      text-decoration: underline; margin-bottom: 4px;" for="file-upload" >BROWSE FILES</label>
+                      <div style="margin-left: 31px;" id="file-upload-filename">
+                       
+                      </div>
+                      <!-- <button>clear</button> -->
+                    </div>
+                    <div id="uploadHide" class="invisible" style="font-size: 13px;
+                    margin-left: 30px;
+                    color: #746745;
+                    text-decoration: underline;;">BROWSE FILES 
+                    </div>
+                    <div class="loader" style="display: none; width: 145%;" id="loaderObj" ></div>
+                  </div>
+
+
+
+                  <div>
+                    <div id="uploadSecond" onclick="browseClicks()" style="width: 144%;" > 
+                      <!-- <input type="file" id="file-upload" />
+                      <label style="font-size: 13px; margin-right: 96px; text-decoration-line: underline; width: 60%;" for="file-upload">BROWSE FILES</label>
+                      <div id="file-upload-filenames">
+                        <span class='close'></span>
+                      </div> -->
+                      <label id="btnFileUpload" style="font-size: 13px; margin-right: 121px; text-decoration-line: underline; width: 60%;  color: #746745;" for="file-upload">BROWSE FILES</label>
+                      <!-- <input type="button" id="btnFileUpload" value="Select File" /> -->
+                        <span id="spnFilePath"></span>
+                        <input type="file" id="FileUpload1" />
+                    </div>
+                    <div id="uploadHideSecond" class="invisible"style="font-size: 13px;
+                    margin-right: 100px;
+                    color: #746745;
+                    text-decoration: underline;width: 61%;">BROWSE FILES
+                    </div>
+                    <div class="loader" style="display: none; width: 73%;" id="loaderObjs" ></div>
+                  </div>
+                </div>
+                  <br>
+                  <br>
+                  <br>
+                <div class="form-control">
+                  <label for="script-title" style="display: none">Client Marketing Repersentative</label>
+                  <br />
+                  <input style="width: 395px;" type="text" placeholder="Client Marketing Repersentative"
+                    name="script-title" id="script-title" onclick="displayTitle(this)" />
+                </div>
+                <div class="form-control">
+                  <label for="submission-summary" style="display: none">Additional Comments</label>
+                  <br />
+                  <textarea name="submission-summary" id="submission-summary" onclick="displayTitle(this)"
+                    placeholder="Additional Comments" rows="5"></textarea>
+                </div>
+
+              </form>
+            </div>
+          </div>
+
+
+
+        </section>
+        <br>
+        <section>
+          <div class="submission-form-container submission-card" style="width: 420px">
+            <h4>ESR Details</h4>
+            <div class="submission-form">
+              <form>
+                <div class="form-control">
+                  <label for="date-submitted" style="display: none">Request Date</label>
+                  <br />
+                  <input style="width: 365px;"  type="date" placeholder="Request Date" name="date-submitted" id="date-submitted"
+                    onclick="displayTitle(this)" />
+                </div>
+                <div class="form-control">
+                  <label for="date-submitted" style="display: none">Start Date</label>
+                  <br />
+                  <input style="width: 365px;"  type="date" placeholder=" Start Date" name="date-submitted" id="date-submitted"
+                    onclick="displayTitle(this)" />
+                </div>
+                <div class="form-control">
+                  <label for="date-submitted" style="display: none">End Date</label>
+                  <br />
+                  <input style="width: 365px;"  type="date" placeholder="End Date" name="date-submitted" id="date-submitted"
+                    onclick="displayTitle(this)" />
+                </div>
+                <div class="form-control">
+                  <label for="script-title" style="display: none">Contract Number</label>
+                  <br />
+                  <input  style="width: 365px;" type="text" placeholder="Contract Number" name="script-title" id="script-title"
+                    onclick="displayTitle(this)" />
+                </div>
+                <div class="custom-select" style="margin-top: 6px; width: 390px;">
+                  <label for="select-tier" style="visibility: hidden">ESR Reason</label>
+                  <select name="select-tier" id="gender" placeholder="ESR Reason" onclick="displayTitle(this)">
+                    <option selected value="">ESR Reason</option>
+                    <option   value="A"> Impending Airdate</option>
+                    <option value="B">Time-Senstive Stunt</option>
+                    <option value="C">Pending Only Final Approval</option>
+                    <option value="C">Other</option>
+                  </select>
+                </div>
+               
+               
+              </form>
+            </div>
+          </div>
+          <!-- <input type="button" id="btnFileUpload" value="Select File" />
+          <span id="spnFilePath"></span>
+          <input type="file" id="FileUpload1" style="display: none" /> -->
+          
+        
+
+            
+        
+       
+        </section>
+      </div>
+    </div>
+  </div>
+  <br>
+  
+  <script>
+    function clearFileInputField(tagId) {
+
+document.getElementById(tagId).innerHTML =
+
+    document.getElementById(tagId).innerHTML;
+
+}
+  </script>
+  <script>
+     window.onload = function () {
+        var fileupload = document.getElementById("FileUpload1");
+        var filePath = document.getElementById("spnFilePath");
+        var button = document.getElementById("btnFileUpload");
+        button.onclick = function () {
+   
+            fileupload.click();
+            
+            
+      
+        
+        fileupload.onchange = function () {
+          isLoading = false;
+                  if(!isLoading){
+     var loaderContainer2 = document.getElementById('loaderObjs');
+      loaderContainer2.setAttribute("style","display:none");
+ 
+         }
+            var fileName = fileupload.value.split('\\')[fileupload.value.split('\\').length - 1];
+            filePath.innerHTML = "<b>Uploaded File: </b><br>" + fileName;
+            console.log('hii')
+            
+    
+        }
+        };
+        
+    };
+     
+  </script>
+  <style>
+  .loader {
+    background-image: url('../../assets/media/Uploader.svg');
+    font-family: "Poppins-Regular";
+    src: url('../../assets/media/Uploader.svg');
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.25px;
+    margin-bottom: 12px;
+    color: #3D3A3A;
+    animation: MoveUpDown 1s linear infinite;
+  /* position: absolute; */
+  left: 0;
+  bottom: 0;
+    /* border: 16px solid #f3f3f3; */
+    /* border-radius: 50%; */
+    /* border-top: 16px solid #3498db; */
+    width: 168px;
+    height: 114px;
+    /* -webkit-animation: spin 2s linear infinite; /* Safari */
+    /* animation: spin 2s linear infinite;  */
+  }
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  </style>
+  </head>
+  <body>
+  
+ 
+  <br>
+  <style>
+    #loading {
+    background: url('spinner.gif') no-repeat center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30%;
+    width: 30%;
+    z-index: 9999999;
+}
+    .close {
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: url('http://i.imgur.com/Idy9R0n.png') no-repeat 0 0;
+    cursor: pointer;
+}
+/* .close:hover {
+    background-position: 13px 0;
+} */
+  </style>
+  <script>
+    function hideLoader() {
+    $('#loading').hide();
+}
+
+$(window).ready(hideLoader);
+
+// Strongly recommended: Hide loader after 20 seconds, even if the page hasn't finished loading
+setTimeout(hideLoader, 20 * 1000);
+  </script>
+  <!-- <div class="tooltip" title="Try clicking <span class='close'></span>" style="width: 960px; margin: 0 auto;"> 
+		This div has a tooltip when you hover over it!
+</div> -->
+  <style>
+  /* The container */
+  .container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: white;
+    border: 1px solid #939191;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  /* .container:hover input ~ .checkmark {
+    background-color:  var(--theme-grey-bg);
+  } */
+  
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: #D4AE36;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    left: 5px;
+    top: 1px;
+    width: 5px;
+    height: 13px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  </style>
+ 
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    
+     /* .autocomplete {
+        position: relative;
+        display: inline-block;
+     } */
+     /* input {
+        border: none;
+        background-color: #f1f1f1;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 4px;
+     } */
+     /* input[type="text"] {
+        background-color: #e1f6fc;
+        width: 100%;
+     } */
+     /* input[type="submit"] {
+        background-color: DodgerBlue;
+        color: #fff;
+        cursor: pointer;
+     } */
+     .autocomplete-items {
+        position: absolute;
+        border-bottom: none;
+        border-top: none;
+        z-index: 99;
+        top: 103%;
+        left: 0;
+        right: 0;
+     }
+     /* .autocomplete-items div {
+        padding: 10px;
+        cursor: pointer;
+        border: .5px solid grey;
+        border-bottom: 1px solid #d4d4d4;
+     } */
+     .autocomplete-items div:hover {
+        background-color: #D4AE36;
+     }
+     /* .autocomplete-active {
+        background-color: rgb(30, 255, 169) !important;
+        color: #ffffff;
+     } */
+  </style>
+  </head>
+  <body>
+ 
+  <!-- <form autocomplete="off">
+  <div class="autocomplete" style="width:300px;">
+  <input id="searchField" type="text" name="animal" placeholder="Animals" />
+  </div>
+  <input type="submit" />
+  </form> -->
+  <!-- <script>
+     function autocomplete(searchEle, arr) {
+        var currentFocus;
+        searchEle.addEventListener("input", function(e) {
+           var divCreate,
+           b,
+           i,
+           fieldVal = this.value;
+           closeAllLists();
+           if (!fieldVal) {
+              return false;
+           }
+           currentFocus = -1;
+           divCreate = document.createElement("DIV");
+           divCreate.setAttribute("id", this.id + "autocomplete-list");
+           divCreate.setAttribute("class", "autocomplete-items");
+           this.parentNode.appendChild(divCreate);
+           for (i = 0; i <arr.length; i++) {
+              if ( arr[i].substr(0, fieldVal.length).toUpperCase() == fieldVal.toUpperCase() ) {
+                 b = document.createElement("DIV");
+                //  const imageNode = document.createElement("img");
+                // imageNode.setAttribute("src", "../assets/media/profile.svg");
+                // imageNode.setAttribute("class", "chip-image");
+                b.innerHTML += "<strong> manish </strong>";
+                 b.innerHTML = "<strong>" + arr[i].substr(0, fieldVal.length) + "</strong>";
+                 b.innerHTML += arr[i].substr(fieldVal.length);
+                 b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                 b.addEventListener("click", function(e) {
+                    searchEle.value = this.getElementsByTagName("input")[0].value;
+                    closeAllLists();
+                 });
+                 divCreate.appendChild(b);
+              }
+           }
+        });
+        searchEle.addEventListener("keydown", function(e) {
+           var autocompleteList = document.getElementById(
+              this.id + "autocomplete-list"
+           );
+           if (autocompleteList)
+              autocompleteList = autocompleteList.getElementsByTagName("div");
+           if (e.keyCode == 40) {
+              currentFocus++;
+              addActive(autocompleteList);
+           }
+           else if (e.keyCode == 38) {
+              //up
+              currentFocus--;
+              addActive(autocompleteList);
+           }
+           else if (e.keyCode == 13) {
+              e.preventDefault();
+              if (currentFocus > -1) {
+                 if (autocompleteList) autocompleteList[currentFocus].click();
+              }
+           }
+        });
+        function addActive(autocompleteList) {
+           if (!autocompleteList) return false;
+              removeActive(autocompleteList);
+           if (currentFocus >= autocompleteList.length) currentFocus = 0;
+           if (currentFocus < 0) currentFocus = autocompleteList.length - 1;
+           autocompleteList[currentFocus].classList.add("autocomplete-active");
+        }
+        function removeActive(autocompleteList) {
+           for (var i = 0; i < autocompleteList.length; i++) {
+              autocompleteList[i].classList.remove("autocomplete-active");
+           }
+        }
+        function closeAllLists(elmnt) {
+           var autocompleteList = document.getElementsByClassName(
+              "autocomplete-items"
+           );
+           for (var i = 0; i < autocompleteList.length; i++) {
+              if (elmnt != autocompleteList[i] && elmnt != searchEle) {
+                 autocompleteList[i].parentNode.removeChild(autocompleteList[i]);
+              }
+           }
+        }
+        document.addEventListener("click", function(e) {
+           closeAllLists(e.target);
+        });
+     }
+     var animals = ["giraffe","tiger", "lion", "dog","cow","bull","cat","cheetah"];
+     autocomplete(document.getElementById("searchField"), animals);
+  </script> -->
+  </body>
+  </html>
+    
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> --> 
+  <script>
+     const selected = {};
+
+const getUsers = async () => {
+    const result = await fetch("https://jsonplaceholder.typicode.com/users")
+        .then((response) => response.json())
+        .then((json) => json);
+    const data = result.map((user) => user.name);
+
+    // add autocomplete to desired inputs
+    autocomplete(document.getElementById("related-contacts"), data);
+    
+
+    // setting default value for an input elm
+    await setDefaultVal(document.getElementById("related-contacts"), data[0]).then(
+        (res) => {
+            const node = document.getElementById("related-contacts").nextElementSibling;
+            createDefaultChip(node);
+        }
+    );
+};
+
+  </script>
+ <script>
+
+  </script>
+
+
+
+  <script>
+    function browseFileClick() {
+      var checkBox = document.getElementById("checkBox");
+      var text = document.getElementById("upload");
+      var uploadHide = document.getElementById("uploadHide");
+      if (checkBox.checked == true) {
+        text.className = 'visible';
+        uploadHide.className = 'invisible'
+        // input.removeEventListener( 'change', showFileName );
+        console.log("mm");
+      } else {
+        text.className = 'invisible';
+        uploadHide.className = 'visible'
+        console.log("hh");
+      }
+    }
+
+    function browseFileClickSecond() {
+      var checkBox = document.getElementById("checkBoxSecond");
+      var text = document.getElementById("uploadSecond");
+      var uploadHide = document.getElementById("uploadHideSecond");
+      if (checkBox.checked == true) {
+        text.className = 'visible';
+        uploadHide.className = 'invisible'
+        // input.removeEventListener( 'change', showFileName );
+        console.log("mm");
+      } else {
+        text.className = 'invisible';
+        uploadHide.className = 'visible'
+        console.log("hh");
+      }
+    }
+    var isLoading  = false;
+    function  browseClick(){
+     isLoading=true;
+     if(isLoading){
+      var loaderContainer = document.getElementById('loaderObj');
+      loaderContainer.setAttribute("style","display:block");
+     }
+ }
+ var isLoading  = false;
+    function  browseClicks(){
+     isLoading=true;
+     if(isLoading){
+      var loaderContainer = document.getElementById('loaderObjs');
+      loaderContainer.setAttribute("style","display:block");
+     }
+ }
+
+
+    var input = document.getElementById('file-upload');
+    var infoArea = document.getElementById('file-upload-filename');
+
+    input.addEventListener('change', showFileName);
+
+    function showFileName(event) {
+       isLoading = false;
+       if(!isLoading){
+         var loaderContainer = document.getElementById('loaderObj');
+         loaderContainer.setAttribute("style","display:none");
+     }
+      // the change event gives us the input it occurred in 
+      var input = event.srcElement;
+
+      // the input has an array of files in the `files` property, each one has a name that you can use. We're just using the name here.
+      var fileName = input.files[0].name;
+
+      // use fileName however fits your app best, i.e. add it into a div
+      infoArea.innerHTML = "<b>Uploaded File: </b><br>" + fileName;
+      
+      // filePath.innerHTML = "<b>Selected File: </b>" + fileName;
+    }
+
+    var file = document.querySelector('input');
+var emptyFile = document.createElement('input');
+emptyFile.type = 'file';
+
+document.querySelector('button').onclick = function(){
+  file.files = emptyFile.files;
+}
+
+     // to set a default GET value for specified input elm
+     async function setDefaultVal(elm, val) {
+            elm.value = val;
+            let event = new Event("input", {
+                bubbles: true,
+                cancelable: true,
+            });
+
+            await elm.dispatchEvent(event);
+        }
+
+
+    //     var input = document.getElementById('file-uploads');
+    // var infoArea = document.getElementById('file-upload-filenames');
+
+    // input.addEventListener('change', showFileName);
+
+    // function showFileName(event) {
+    //    isLoading = false;
+    //    if(!isLoading){
+    //      var loaderContainer = document.getElementById('loaderObj');
+    //      loaderContainer.setAttribute("style","display:none");
+    //  }
+    //   // the change event gives us the input it occurred in 
+    //   var input = event.srcElement;
+
+    //   // the input has an array of files in the `files` property, each one has a name that you can use. We're just using the name here.
+    //   var fileName = input.files[0].name;
+
+    //   // use fileName however fits your app best, i.e. add it into a div
+    //   infoArea.textContent = 'Uploaded File ' + fileName;
+    // }
+    //  // to set a default GET value for specified input elm
+    //  async function setDefaultVal(elm, val) {
+    //         elm.value = val;
+    //         let event = new Event("input", {
+    //             bubbles: true,
+    //             cancelable: true,
+    //         });
+
+    //         await elm.dispatchEvent(event);
+    //     }
+
+    //     // to create chip for deafult GET value
+    //     async function createDefaultChip(node) {
+    //         const toClick = node.querySelector("input");
+    //         let event = new Event("click", {
+    //             bubbles: true,
+    //             cancelable: true,
+    //         });
+    //         await toClick.dispatchEvent(event);
+    //     }
+
+        // dummy array for autocomplete
+        const users = getUsers();
+
+        // function to add a selected value into "selected" object
+        function addToSelected(elm, inputElm) {
+            console.log(elm, inputElm);
+            const selectedID = inputElm.parentNode.parentNode
+                .getElementsByTagName("input")[0]
+                .name.split("-")[0];
+            if (!selected[selectedID]) {
+                selected[selectedID] = [];
+            }
+
+            const hasAlready = selected[selectedID].indexOf(elm);
+
+            if (hasAlready !== -1) {
+                return;
+            }
+            selected[selectedID].push(elm);
+            const node = document.createElement("DIV");
+            node.setAttribute("class", "chip-span");
+            const imageNode = document.createElement("img");
+            imageNode.setAttribute("src", "../../assets/media/profile1.svg");
+            imageNode.setAttribute("class", "chip-image");
+            const textNode = document.createElement("SPAN");
+            textNode.innerText = elm;
+            textNode.setAttribute("class", "chip-text");
+            const crossSpan = document.createElement("BUTTON");
+            crossSpan.setAttribute("class", "cross-span");
+            //crossSpan.innerText = "x";
+
+            // function to remove value from selected object
+            crossSpan.addEventListener("click", function (e) {
+                const toRemove = e.target.parentNode.firstChild;
+                const newArr = selected[selectedID].filter(function (val) {
+                    return val === toRemove;
+                });
+                e.target.parentNode.parentNode.removeChild(
+                    e.target.parentNode
+                );
+                selected[selectedID] = newArr;
+            });
+            //imageNode.insertAdjacentElement("beforeend", textNode);
+            //textNode.insertAdjacentElement("beforeend", crossSpan);
+
+            node.appendChild(imageNode);
+            node.appendChild(textNode);
+            node.appendChild(crossSpan);
+            //node.appendChild(crossSpan);
+            inputElm.parentNode.parentNode.prepend(node);
+        }
+
+        // autocomplete watcher function
+        function autocomplete(inp, arr) {
+            /*the autocomplete function takes two arguments,
+          the text field element and an array of possible autocompleted values:*/
+            var currentFocus;
+            // addToSelected(arr[0], inp);
+            /*execute a function when someone writes in the text field:*/
+            inp.addEventListener("input", function (e) {
+                var a,
+                    b,
+                    i,
+                    val = this.value;
+                /*close any already open lists of autocompleted values*/
+                closeAllLists();
+                if (!val) {
+                    return false;
+                }
+                currentFocus = -1;
+                /*create a DIV element that will contain the items (values):*/
+                a = document.createElement("DIV");
+                a.setAttribute("id", this.id + "autocomplete-list");
+                a.setAttribute("class", "autocomplete-items");
+                /*append the DIV element as a child of the autocomplete container:*/
+                this.parentNode.appendChild(a);
+                /*for each item in the array...*/
+                for (i = 0; i < arr.length; i++) {
+                    /*check if the item starts with the same letters as the text field value:*/
+                    if (
+                        arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()
+                    ) {
+                        /*create a DIV element for each matching element:*/
+                        b = document.createElement("DIV");
+                        /*make the matching letters bold:*/
+                        b.innerHTML =
+                            "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                        b.innerHTML += arr[i].substr(val.length);
+                        /*insert a input field that will hold the current array item's value:*/
+                        b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                        /*execute a function when someone clicks on the item value (DIV element):*/
+                        b.addEventListener("click", function (e) {
+                            /*insert the value for the autocomplete text field:*/
+                            inp.value = this.getElementsByTagName("input")[0].value;
+                            // selected.push(inp.value);
+                            console.log(inp);
+                            addToSelected(inp.value, this);
+                            inp.value = "";
+                            /*close the list of autocompleted values,
+                          (or any other open lists of autocompleted values:*/
+                            closeAllLists();
+                        });
+                        a.appendChild(b);
+                    }
+                }
+            });
+            /*execute a function presses a key on the keyboard:*/
+            inp.addEventListener("keydown", function (e) {
+                var x = document.getElementById(this.id + "autocomplete-list");
+                if (x) x = x.getElementsByTagName("div");
+                if (e.keyCode == 40) {
+                    /*If the arrow DOWN key is pressed,
+                  increase the currentFocus variable:*/
+                    currentFocus++;
+                    /*and and make the current item more visible:*/
+                    addActive(x);
+                } else if (e.keyCode == 38) {
+                    //up
+                    /*If the arrow UP key is pressed,
+                  decrease the currentFocus variable:*/
+                    currentFocus--;
+                    /*and and make the current item more visible:*/
+                    addActive(x);
+                } else if (e.keyCode == 13) {
+                    /*If the ENTER key is pressed, prevent the form from being submitted,*/
+                    e.preventDefault();
+                    if (currentFocus > -1) {
+                        /*and simulate a click on the "active" item:*/
+                        if (x) x[currentFocus].click();
+                    }
+                }
+            });
+            function addActive(x) {
+                /*a function to classify an item as "active":*/
+                if (!x) return false;
+                /*start by removing the "active" class on all items:*/
+                removeActive(x);
+                if (currentFocus >= x.length) currentFocus = 0;
+                if (currentFocus < 0) currentFocus = x.length - 1;
+                /*add class "autocomplete-active":*/
+                x[currentFocus].classList.add("autocomplete-active");
+            }
+            function removeActive(x) {
+                /*a function to remove the "active" class from all autocomplete items:*/
+                for (var i = 0; i < x.length; i++) {
+                    x[i].classList.remove("autocomplete-active");
+                }
+            }
+            function closeAllLists(elmnt) {
+                /*close all autocomplete lists in the document,
+              except the one passed as an argument:*/
+                var x = document.getElementsByClassName("autocomplete-items");
+                for (var i = 0; i < x.length; i++) {
+                    if (elmnt != x[i] && elmnt != inp) {
+                        x[i].parentNode.removeChild(x[i]);
+                    }
+                }
+            }
+            /*execute a function when someone clicks in the document:*/
+            document.addEventListener("click", function (e) {
+                closeAllLists(e.target);
+            });
+        }
+  </script>
+  
+  <style>
+    input[type="file"] {
+      z-index: -1;
+      position: absolute;
+      opacity: 0;
+      font-size: 9px;
+      display: flex;
+      background-color: #83744e;
+    }
+
+    /* input:focus + label {
+ outline: 2px solid;
+} */
+  </style>
+  <style>
+    input[type=date] {
+      text-align: right;
+    }
+
+    input[type="date"]:before {
+      /* color: lightgrey; */
+      content: attr(placeholder) !important;
+      margin-right: 0.5em;
+      font-family: "Poppins Light";
+    }
+  </style>
+
+
+  <!-- The Modal -->
+  <div class="modal" style="padding-top: 200px;">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-heading">
+        <div class="modal-title">Warning!</div>
+        <span class="close">&times;</span>
+
+      </div>
+      <div style="margin-top: 20px;">Are you sure you want to delete this record?</div>
+      <div class="form-control modal-btn-row" style="margin-top: 20px;">
+        <button id="role-save-btn" class="form-submit-btn" type="submit" onclick="deleteRow()">
+          DELETE
+        </button>
+        <button id="del-cancel-btn" class="form-cancel-btn">CANCEL</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- The Edit Modal -->
+  <div id="editModal" class="modal" style="padding-top: 80px;">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-heading">
+        <div class="modal-title">Edit Action Item</div>
+        <span class="editModalclose">&times;</span>
+
+      </div>
+      <div class="form-control">
+        <br />
+        <textarea style="overflow: hidden" name="add-action-item" id="add-action-item" onclick="displayTitle(this)"
+          placeholder="Add Action Item" rows="5"></textarea>
+      </div>
+      <div class="modal-heading">
+        <div class="modal-text">Does the Action have a due date?</div>
+        <div>
+          <label class="switch">
+            <input type="checkbox" id="req-edit-due-date" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+      <div class="form-control">
+        <label for="due-date" style="display: none">Due Date</label>
+        <br />
+        <input type="date" placeholder="Due Date" name="due-date" id="edit-due-date" disabled />
+      </div>
+      <div class="form-control">
+        <label for="select-status" style="display: none">Select Status</label>
+        <br />
+        <div class="custom-select">
+          <label for="select-status" style="visibility: hidden">Select Status</label>
+          <select name="select-status" id="select-status" placeholder="select status" onclick="displayTitle(this)">
+            <option selected value="">Select Status</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Pending">Pending</option>
+            <option value="Complete">Complete</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-control">
+        <div class="form-control form-btn-row">
+          <button class="form-submit-btn" type="submit" onclick="closeActionItemNav()">SAVE</button>
+          <button class="form-cancel-btn" onclick="closeEditModal()">CANCEL</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation menu -->
+  <div id="navigationMenu" class="sidenav">
+    <div class="sidenav-body">
+      <a href="javascript:void(0)" class="closebtn navClosebtn" onclick="closeNav()">&times;</a>
+
+      <div class="sidenav-logo">
+        <picture>
+          <!-- <source media="(min-width:650px)" src="../assets/media/logo.png" /> -->
+          <img src="../../assets/media/logo2x.png" />
+        </picture>
+      </div>
+      <div class="sidenav-links">
+        <!-- <div class="sidenav-link active-link">
+                People
+            </div> -->
+        <div class="sidenav-link">
+          <img class="sidenav-icons" src="../../assets/media/Incoming.svg" />
+          Incoming Submission
+        </div>
+        <div class="sidenav-link">
+          <img class="sidenav-icons" src="../../assets/media/rocket.svg" />
+          Projects
+          <div class="sidenav-sublink">
+            <ul>
+              <li>Current Projects</li>
+              <li>Development Projects</li>
+            </ul>
+          </div>
+        </div>
+        <div class="sidenav-link">
+          <img class="sidenav-icons" src="../../assets/media/people.svg" />
+          Contacts
+          <div class="sidenav-sublink">
+            <ul>
+              <li>People Management</li>
+              <li>Company Management</li>
+            </ul>
+          </div>
+        </div>
+        <div class="sidenav-link">
+          <img class="sidenav-icons" src="../../assets/media/report.svg" />
+          Reports
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var modal = document.getElementById("deleteModal");
+    var editModal = document.getElementById("editModal");
+    var navModal = document.getElementById("navigationMenu");
+
+    // Get the button that opens the modal
+    var btn = document.querySelectorAll(".delSubmenu");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    var editClose = document.getElementsByClassName("editModalclose")[0];
+    var navClose = document.getElementsByClassName("navClosebtn")[0];
+
+    var delcancelBtn = document.getElementById("del-cancel-btn");
+
+    function showmodal() {
+      modal.style.cssText = "  margin-top: 0;margin-bottom: 0;height: 100vh;display: flex;flex-direction: column;justify-content: center;"
+    }
+
+    function editButton() {
+      editModal.style.cssText = "  margin-top: 0;margin-bottom: 0;height: 100vh;display: flex;flex-direction: column;justify-content: center;"
+    }
+
+    function closeEditModal() {
+      editModal.style.display = "none";
+    }
+    var indexModal = 0;
+    for (; indexModal < btn.length; indexModal++) {
+      btn[indexModal].addEventListener("click", showmodal)
+    }
+
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+      modal.style.display = "none";
+    }
+
+    editClose.onclick = function () {
+      editModal.style.display = "none";
+    }
+
+    navClose.onclick = function () {
+      navModal.style.display = "none";
+    }
+
+    delcancelBtn.onclick = function () {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      if (event.target == modal || event.target == editModal || event.target === navModal) {
+        modal.style.display = "none";
+        editModal.style.display = "none";
+        navModal.style.display = "none";
+      }
+    }
+    function deleteRow() {
+      document.getElementById('deleteModal').style.display = "none";
+      document.getElementById('blankRow').style.display = "inline-block";
+      console.log(e.parentNode);
+    }
+
+
+    function openSideNav() {
+      navModal.style.display = "block";
+      document.getElementById("navigationMenu").style.width = "100%";
+    }
+
+
+    document.getElementById("link-require-pwd").onchange = function () {
+      document.getElementById("password").disabled = !this.checked;
+      if (document.getElementById("password").disabled) {
+        document.getElementById("password").value = "";
+        document.getElementById("passwordLabel").classList.remove("form-control-label");
+      }
+    };
+    document.getElementById("overall-deal").onchange = function () {
+      document.getElementById("lookup-accounts").disabled = !this.checked;
+      if (document.getElementById("lookup-accounts").disabled) {
+        document.getElementById("lookup-accounts").value = "";
+        document.getElementById("lookup-accounts-label").classList.remove("form-control-label");
+      }
+    };
+
+    document.getElementById("req-due-date").onchange = function () {
+      document.getElementById("due-date").disabled = !this.checked;
+    };
+
+    document.getElementById("req-edit-due-date").onchange = function () {
+      document.getElementById("edit-due-date").disabled = !this.checked;
+    };
+
+
+    var textarea = document.querySelectorAll("textarea");
+    var index = 0;
+    for (; index < textarea.length; index++) {
+      textarea[index].addEventListener("keydown", autosize);
+    }
+
+    function autosize() {
+      var el = this;
+      setTimeout(function () {
+        el.style.cssText = "height:auto; padding:0";
+        el.style.cssText = "height:" + el.scrollHeight + "px";
+      }, 0);
+    }
+
+    function displayTitle(e, isAutocomplete = false) {
+      console.log(e.labels[0]);
+      const elm = e.labels[0];
+      if (!isAutocomplete) {
+        elm.classList.add("form-control-label");
+      } else {
+        elm.classList.add("form-control-ac-label");
+      }
+      e.placeholder = "Type here...";
+    }
+
+    function fillSvg(e) {
+      console.log(e);
+      let svgImages = e.querySelectorAll(".svg-color");
+      for (i = 0; i < svgImages.length; i++) {
+        svgImages[i].style.fill = "#247C4A";
+        svgImages[i].classList.toggle("fill-grey");
+      }
+      // e.querySelector(".svg-color-red").style.fill = "#A81616";
+      e.querySelector(".svg-color-red").classList.toggle("fill-grey");
+    }
+
+    function updateStatus(e) {
+      let text = e.querySelectorAll("b");
+      text[0].classList.toggle('txt-black');
+    }
+
+    function updateCoverageStatus(e) {
+      let text = e.querySelectorAll("b");
+      text[0].classList.toggle('txt-black');
+      let connector = document.querySelectorAll('.submission-status');
+      connector[0].classList.toggle('active');
+    }
+
+
+    // custom select code
+    var x, i, j, l, ll, selElmnt, a, b, c;
+    /* Look for any elements with the class "custom-select": */
+    x = document.getElementsByClassName("custom-select");
+    l = x.length;
+    for (i = 0; i < l; i++) {
+      selElmnt = x[i].getElementsByTagName("select")[0];
+      ll = selElmnt.length;
+      /* For each element, create a new DIV that will act as the selected item: */
+      a = document.createElement("DIV");
+      a.setAttribute("class", "select-selected");
+      a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+      x[i].appendChild(a);
+      /* For each element, create a new DIV that will contain the option list: */
+      b = document.createElement("DIV");
+      b.setAttribute("class", "select-items select-hide");
+      for (j = 1; j < ll; j++) {
+        /* For each option in the original select element,
+create a new DIV that will act as an option item: */
+        c = document.createElement("DIV");
+        c.innerHTML = selElmnt.options[j].innerHTML;
+        c.addEventListener("click", function (e) {
+          /* When an item is clicked, update the original select box,
+    and the selected item: */
+          var y, i, k, s, h, sl, yl;
+          lbl = this.parentNode.parentNode.getElementsByTagName("label")[0];
+          lbl.classList.add("form-control-label");
+          s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+          sl = s.length;
+          h = this.parentNode.previousSibling;
+          for (i = 0; i < sl; i++) {
+            if (s.options[i].innerHTML == this.innerHTML) {
+              console.log("this", this.parentNode);
+              this.parentNode.parentNode.classList.add("selected-font-black");
+              s.selectedIndex = i;
+              h.innerHTML = this.innerHTML;
+              y = this.parentNode.getElementsByClassName("same-as-selected");
+              yl = y.length;
+              for (k = 0; k < yl; k++) {
+                y[k].removeAttribute("class");
+              }
+              this.setAttribute("class", "same-as-selected");
+              break;
+            }
+          }
+          h.click();
+        });
+        b.appendChild(c);
+      }
+      x[i].appendChild(b);
+      a.addEventListener("click", function (e) {
+        /* When the select box is clicked, close any other select boxes,
+and open/close the current select box: */
+        e.stopPropagation();
+        closeAllSelect(this);
+        this.nextSibling.classList.toggle("select-hide");
+        this.classList.add('selected-item');
+        this.classList.toggle("select-arrow-active");
+      });
+    }
+
+    function closeAllSelect(elmnt) {
+      /* A function that will close all select boxes in the document,
+except the current select box: */
+      var x,
+        y,
+        i,
+        xl,
+        yl,
+        arrNo = [];
+      x = document.getElementsByClassName("select-items");
+      y = document.getElementsByClassName("select-selected");
+      xl = x.length;
+      yl = y.length;
+      for (i = 0; i < yl; i++) {
+        if (elmnt == y[i]) {
+          arrNo.push(i);
+        } else {
+          y[i].classList.remove("select-arrow-active");
+        }
+      }
+      for (i = 0; i < xl; i++) {
+        if (arrNo.indexOf(i)) {
+          x[i].classList.add("select-hide");
+        }
+      }
+    }
+
+    function blurAllselect(elmnt) {
+      var x, xl, arrNo = [];
+      x = document.getElementsByClassName("select-selected");
+      xl = x.length
+      for (i = 0; i < xl; i++) {        x[i].classList.remove("selected-item");
+      }
+    }
+
+   
+   
+
+    /* Set the width of the side navigation to 250px */
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "100%";
+      document.querySelector(".sidenav-menu").style.display = "block";
+      document.body.style.overflow = "hidden";
+    }
+
+    /* Set the width of the side navigation to 0 */
+    function closeNav() {
+      document.querySelector(".sidenav-menu").style.display = "none";
+      document.getElementById("mySidenav").style.width = "0";
+      document.body.style.overflow = "auto";
+    }
+  </script>
+</body>
+
+</html>
